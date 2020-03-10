@@ -7,5 +7,8 @@ def prime?(num)
   if num <= 1 
     return false 
   end 
- (2..num-1).none? {|divisor| num % divisor == 0} 
+ (2...num).none? {|divisor| num % divisor == 0} 
 end
+
+#.none? the entire expression returns true because none of those numbers will produce a true expression when asked within the block if they are prime 
+#none of the numbers should return true for none? to return true. If none of the numbers return true, then they are not divisible by the number and the number is prime
