@@ -1,37 +1,11 @@
-# Add  code here!
-#what makes a prime number: not negative, not 0, not 1, not a composite number, only divisible by itself and one 
-#range => (-5..-1) => [-5, -4, -3, -2, -1]
+#exclude numbers <= 1 
+#create a range of numbers from 2 to one less than the number in question (num-1)
+#iterate through the range, is the number in question (num) cleanly divisible by each number in the range (n), if the number(num) divided by a number in the range (n) has a remainder of 0 it is not prime, return false 
+#if at the end of the interation there were no numbers that were evenly divisible, the number is prime, return true 
 
-def prime?(integer)
-  if integer <= 1 
+def prime?(num)
+  if num <= 1 
     return false 
-  elsif (2..integer-1).each do |i| 
-    if integer % i == 0 
-    return false 
-    end 
-    end 
   end 
-  true 
+ (2..num-1).none? {|divisor| num % divisor == 0} 
 end
-
-# def prime?(num)
-#   if num <= 1
-#     return false
-#   else
-#     (2..num-1).all? do |possible_factor|
-#       num % possible_factor != 0
-#     end
-#   end
-# end
-
-# def prime?(number)
-#   start = 2
-#   if number > 1
-#     range = (start..number-1).to_a
-#     range.none? do |num_to_test| 
-#       number % num_to_test == 0
-#     end
-#   else
-#     false
-#   end
-# end
