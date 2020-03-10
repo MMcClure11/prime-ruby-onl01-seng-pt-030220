@@ -11,4 +11,4 @@ def prime?(num)
 end
 
 
-#
+##none of the numbers should return true for none? to return true. If none of the numbers
